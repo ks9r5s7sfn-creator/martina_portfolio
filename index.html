@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Sister | Content Manager Portfolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+  <section class="text-center py-12">
+    <h1 class="text-4xl font-bold">Hey, I'm [Name]</h1>
+    <p class="mt-2 text-lg text-gray-600">Content Manager | TikTok & Instagram Growth Specialist</p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl font-semibold mb-4">Social Media Growth</h2>
+    <canvas id="tiktokChart" height="150"></canvas>
+    <canvas id="instaChart" height="150" class="mt-8"></canvas>
+  </section>
+
+  <section class="text-center py-10">
+    <a href="portfolio.pdf" download class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+      Download Full Portfolio
+    </a>
+  </section>
+
+  <script>
+    const tiktokCtx = document.getElementById('tiktokChart').getContext('2d');
+    new Chart(tiktokCtx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        datasets: [{
+          label: 'TikTok Followers',
+          data: [1000, 2500, 4000, 6000, 8500],
+          borderColor: 'rgb(255, 99, 132)',
+          tension: 0.3
+        }]
+      }
+    });
+
+    const instaCtx = document.getElementById('instaChart').getContext('2d');
+    new Chart(instaCtx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        datasets: [{
+          label: 'Instagram Followers',
+          data: [800, 1200, 3000, 4500, 7000],
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.3
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
